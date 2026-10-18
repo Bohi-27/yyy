@@ -8,9 +8,13 @@ h1 {
 }
 p {
   text-align: center;
+  line-height: 60%;
 }
 thead {
   color: blueviolet;
+}
+table {
+  text-align: center;
 }
 body {
   background-color: rgb(255, 240, 249);
