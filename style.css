@@ -1,4 +1,10 @@
 h1,
 p {
-  color: blue;
+  color: rgb(12, 85, 62);
+  font-style: italic;
+  font-family: cursive;
+  font-size: 100%;
+}
+body {
+  background-color: rgba(161, 231, 189, 0.977);
 }
