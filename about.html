@@ -11,11 +11,40 @@
     <h1>hhhhh</h1>
     <iframe src="./index.html" width="600px" height="400"></iframe>
 
-    <video width="600" controls>
+    <video id="video" width="400" controls autoplay loop>
       <source
-        src="CONGB - chờ chút... - TINH HÀ SAY HI [PERFORMANCE].mp4"
+        src="./music/Ariana Grande - bye [Altare Remix] - Extended Remix.mp4"
         type="video/mp4"
       />
     </video>
+
+    <audio
+      id="audio"
+      src="./music/Ariana Grande - bye [Altare Remix] - Extended Remix.mp3"
+    ></audio>
+
+    <script>
+      const video = document.getElementById("video");
+      const audio = document.getElementById("audio");
+
+      //video play thì audio cũng play -> thời gian play của cả 2 phải bằng nhau
+      video.addEventListener("play", function () {
+        audio.currentTime = video.currentTime;
+        audio.play();
+      });
+      // thời gian dừng thì cả 2 đều phải bằng nhau -> video pause thì audio cũng pause
+      video.addEventListener("pause", function () {
+        audio.pause();
+      });
+      // thời gian tua thì cả video và audio bằng nhau -> cả 2 vẫn đang play
+      video.addEventListener("seeking", function () {
+        audio.currentTime = video.currentTime;
+      });
+      // kết thúc thì vid và au cũng phải dừng, au thì =o để lượt chiếu next
+      video.addEventListener("ended", function () {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    </script>
   </body>
 </html>
