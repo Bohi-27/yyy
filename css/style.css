@@ -7,8 +7,8 @@ h1 {
   text-align: center;
 }
 p {
-  text-align: center;
-  line-height: 60%;
+  text-align: start;
+  line-height: 100%;
 }
 thead {
   color: blueviolet;
@@ -17,5 +17,5 @@ table {
   text-align: center;
 }
 body {
-  background-color: rgb(255, 240, 249);
+  background-color: rgb(212, 241, 193);
 }

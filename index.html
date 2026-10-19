@@ -8,6 +8,8 @@
     <title>ko thích học lịch sử</title>
   </head>
   <body>
+    <a href="./index.html">home</a>
+    <a href="./about.html">about</a>
     
     <h1>ko thích học lịch sử</h1>
     <p>ko thích học lịch sử </p>
@@ -15,8 +17,8 @@
     <p>2 <sub>2</sub></p>
     <p>ko <del>thích</del> học bài</p>
     <p>đi <mark>chơi</mark> ko?</p>
-
-    <table border="1">
+    
+    <table id="thong tin" border="1">
       <caption>bảng CORTIS &hearts;</caption>
       <thead>
         <tr style="border: 1px solid;">
@@ -67,6 +69,42 @@
 <input type="radio" id="css" name="fav_language" value="CSS" checked>
 <label for="css">CSS</label><br>
 
+<video id="video" width="300" controls autoplay loop>
+    <source
+        src="CONGB - chờ chút... - TINH HÀ SAY HI [PERFORMANCE].mp4"
+        type="video/mp4">
+</video>
+
+<audio id="audio"
+    src="CONGB - chờ chút... - TINH HÀ SAY HI [PERFORMANCE].mp3">
+</audio>
+
+<script>
+    const video = document.getElementById("video");
+    const audio = document.getElementById("audio");
+
+    // Khi phát video, phát cả âm thanh
+    video.addEventListener("play", function () {
+        audio.currentTime = video.currentTime;
+        audio.play();
+    });
+
+    // Khi tạm dừng video, tạm dừng âm thanh
+    video.addEventListener("pause", function () {
+        audio.pause();
+    });
+
+    // Khi tua video, đồng bộ thời gian âm thanh
+    video.addEventListener("seeking", function () {
+        audio.currentTime = video.currentTime;
+    });
+
+    // Khi video kết thúc, dừng âm thanh
+    video.addEventListener("ended", function () {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+</script>
 
 
   </body>
