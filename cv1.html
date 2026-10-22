@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cv1</title>
+  </head>
+  <body>
+    <a href="./index.html">home</a>
+    <a href="./about.html">about</a>
+    <a href="./cv1.html">cv1</a>
+    <h1>cv1</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam
+      nihil magni, saepe iusto voluptatum nobis officia distinctio cum quisquam
+      neque perspiciatis minima nostrum blanditiis consequatur veritatis fugiat
+      est animi eligendi natus facilis beatae dolor laborum. Delectus hic
+      commodi illo!s
+    </p>
+    <hr />
+    <video id="video" width="500" controls autoplay loop>
+      <source
+        src="./music/CONGB - chờ chút... - TINH HÀ SAY HI [PERFORMANCE].mp4"
+        type="video/mp4"
+      />
+    </video>
+    <audio
+      id="audio"
+      src="./music/CONGB - chờ chút... - TINH HÀ SAY HI [PERFORMANCE].mp3"
+    ></audio>
+    <script>
+      const video = document.getElementById("video");
+      const audio = document.getElementById("audio");
+
+      video.addEventListener("play", function () {
+        audio.currentTime = video.currentTime;
+        audio.play();
+      });
+
+      video.addEventListener("pause", function () {
+        audio.pause();
+      });
+
+      video.addEventListener("seeking", function () {
+        audio.currentTime = video.currentTime;
+      });
+
+      video.addEventListener("ended", function () {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    </script>
+  </body>
+</html>

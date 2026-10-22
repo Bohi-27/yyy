@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cv2</title>
+  </head>
+
+  <body>
+    <video id="video" width="450" controls autoplay muted loop>
+      <source
+        src="./music/Ariana Grande - bye [Altare Remix] - Extended Remix.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <audio
+      id="audio"
+      src="./music/Ariana Grande - bye [Altare Remix] - Extended Remix.mp3"
+    ></audio>
+    <script>
+      const video = document.getElementById("video");
+      const audio = document.getElementById("audio");
+
+      video.addEventListener("play", function () {
+        audio.currentTime = video.currentTime;
+        audio.play();
+      });
+      video.addEventListener("pause", function () {
+        audio.pause();
+      });
+      video.addEventListener("seeking", function () {
+        audio.currentTime = video.currentTime;
+      });
+      video.addEventListener("ended", function () {
+        audio.currentTime = 0;
+        audio.pause();
+      });
+    </script>
+  </body>
+</html>

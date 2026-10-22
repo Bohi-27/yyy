@@ -19,3 +19,17 @@ table {
 body {
   background-color: rgb(247, 225, 240);
 }
+h2 {
+  /* opacity: 0; */
+  /* display: none; */
+  visibility: hidden;
+}
+span {
+  visibility: visible;
+}
+input:checked ~ img {
+  visibility: hidden;
+}
+img {
+  transition: 1.5s;
+}
